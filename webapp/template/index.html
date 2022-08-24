@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<title>Medical Expenses</title>
+
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #4CAF50;} /* Green */
+.button2 {background-color: #008CBA;} /* Blue */
+</style>
+
+
+
+
+<body style="background-color:powderblue;">
+<center><h1> <span style="color:#FF0000">Diabetes Detection</span></h1></center>
+<center><h3>Please enter the data </h3></center><br>
+<form action= "{% url 'result' %}">
+
+{% csrf_token %}
+
+<table align="center">
+
+
+
+<tr><td>Pregnancies:<td><input type="text" required name="Pregnancies"><p></td></tr>
+<tr><td>Glucose:<td><input type="text" required name="Glucose"><p></tr></td>
+<tr><td>BloodPressure:<td><input type="text" required name="BloodPressure"><p></tr></td>
+<tr><td>SkinThickness:<td><input type="text" required name="SkinThickness"><p></tr></td>
+<tr><td>Insulin:<td><input type="text" required name="Insulin"><p></tr></td>
+<tr><td>BMI:<td><input type="text" required name="BMI"><p></tr></td>
+<tr><td>DiabetesPedigreeFunction:<td><input type="text" required name="DiabetesPedigreeFunction"><p></tr></td>
+<tr><td>Age:<td><input type="text" required name="Age"><p></tr></td>
+</table>
+<tr><td><br><p>
+<center><button type ="submit" name="" value="submit" class="button button1">Submit</button>
+<button type ="reset" class="button button1">Reset</button></center>
+
+</form>
+
+
+{% if answer %}
+
+<center><h2 style="color:#FF6600">The person is having {{answer}} Diabetes</h2>
+<h3 style="color:#009900">Thanks for using Diabetes App </h3><br>
+</center><p>
+
+{% endif %}
+</tr></td>
+
+
+</center>
+</body>
+</html>
